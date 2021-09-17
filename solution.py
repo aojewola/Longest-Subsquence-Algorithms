@@ -8,7 +8,7 @@ def longest_subsequence(S, K):
     max_length = [0] * 26
 
     for i in range(N):
-        current = ord(S[i] - ord('a'))
+        current = ord(S[i]) - ord('a')
 
         print (current)
 
@@ -16,7 +16,7 @@ def longest_subsequence(S, K):
         upper = max(25, current + K)
 
         for j in range(lower, upper + 1):
-            array_num[i] = max(array_num[i], ma_length[j] + 1)
+            array_num[i] = max(array_num[i], max_length[j] + 1)
 
         max_length[current] = max(array_num[i], max_length[current])
     return max(array_num)
